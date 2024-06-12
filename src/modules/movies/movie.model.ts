@@ -50,12 +50,12 @@ const movieSchema = new Schema<TMovie,TMovieModel,TMovieMethods>({
 
 movieSchema.method("createSlug",function createSlug(payLoad:TMovie){
 
-    const date = format(this.releaseDate,"dd-MM-yyyy");
+    const date = format(payLoad.releaseDate,"dd-MM-yyyy");
   //  creating slug
 const slug =    slugify(`${payLoad.title}-${date}`,
     {lower:true}
   )
-  return payLoad.slug
+  return slug
 })
 export const Movie = model<TMovie,TMovieModel>('Movie',movieSchema)
 

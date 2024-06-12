@@ -9,13 +9,10 @@ export type TMovie = {
   isDeleted?: boolean;
   viewCount: number;
   totalRating:number;
-  // reviews: [TReview];
   slug:string
 };
-
+// Put all user instance methods in this interface:
 export type TMovieMethods ={
-  // findOne: any;
-  // updateOne: any;
   createSlug(payLoad:TMovie):string;
 }
 
